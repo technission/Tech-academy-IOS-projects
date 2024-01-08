@@ -1,0 +1,70 @@
+//
+//  ViewController.swift
+//  OOP assignment
+//
+//  Created by Steve on 1/3/24.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    class singer {
+        var name: String
+        var age: Int
+        
+        init(name: String, age: Int) {
+            self.name = name
+            self.age = age
+        }
+        
+        func sing() {
+            print("I can sing")
+        }
+    }
+    
+    class Dog {
+        var breed: String
+        var color: String
+        var height: String
+        var weight: String
+        
+        init(breed: String, color: String, height: String, weight: String) {
+            self.breed = breed
+            self.color = color
+            self.height = height
+            self.weight = weight
+        }
+        
+        func shake() -> String {
+            return "I can shake"
+        }
+        
+        func sit() -> String {
+            return "I can sit"
+        }
+        
+        func layDown() -> String {
+            return "I can lay down"
+        }
+        
+    }
+    
+    var hound = Dog(breed: "Hound", color: "Brown", height: "2 feet", weight: "60 pounds")
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(hound.breed)
+        print(hound.color)
+        print(hound.height)
+        print(hound.weight)
+        print(hound.shake())
+        print(hound.sit())
+        print(hound.layDown())
+        
+        // Do any additional setup after loading the view.
+    }
+    
+
+
+}
+
