@@ -1,0 +1,61 @@
+import UIKit
+
+class Shape {
+    var shapeName: String
+    var color: String
+    init(shapeName: String, color: String) {
+        self.shapeName = shapeName
+        self.color = color
+    }
+    func getArea(selectedShape: String) {
+        switch (selectedShape) {
+        case "rectangle":
+            rectangle.area = rectangle.Height * rectangle.Width
+            print("The rectangle's area is \(rectangle.area) inches.")
+            break;
+        case "triangle":
+            triangle.area = triangle.Base * triangle.Height / 2
+            print("The triangle's area is \(triangle.area) inches.")
+            break;
+        case "circle":
+            circle.area = circle.Radius * 3.14
+            print("The circle's area is \(circle.area) inches.")
+        default:
+            print("No shape selected")
+        }
+        
+    }
+}
+
+class Rectangle: Shape {
+    let Height = 6
+    let Width = 4
+    var area: Int = 0
+}
+
+class Triangle: Shape {
+    let Base = 6
+    let Height = 10
+    var area: Int = 0
+}
+
+class Circle: Shape {
+    let Radius = 15.0
+    var area: Double = 0.0
+}
+
+var rectangle = Rectangle(shapeName: "rectangle", color: "yellow")
+var triangle = Triangle(shapeName: "triangle", color: "brown")
+var circle = Circle(shapeName: "circle", color: "red")
+var rectStatement = "The \(rectangle.shapeName)'s color is \(rectangle.color) with a height of \(rectangle.Height) inches and a width of \(rectangle.Width) inches."
+var triaStatement = "The \(triangle.shapeName)'s color is \(triangle.color) with a base of \(triangle.Base) inches and a height of \(triangle.Height) inches."
+var circleStatement = "The \(circle.shapeName)'s color is \(circle.color) with a radius of \(circle.Radius) inches."
+
+print(rectStatement)
+rectangle.getArea(selectedShape: "rectangle")
+print(triaStatement)
+triangle.getArea(selectedShape: "triangle")
+print(circleStatement)
+circle.getArea(selectedShape: "circle")
+
+
